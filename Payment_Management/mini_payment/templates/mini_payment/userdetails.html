@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment app</title>
+    <style>
+        h1{
+            text-align: center;
+            color: red;
+        }
+        .cont{
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            margin:5% 30%;
+            padding: 2%;
+        }
+        .ser{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Details 👥</h1>
+    <div class="cont">
+        <h2>Name :{{user.name}}</h2>
+        <h2>Email : {{user.email}}</h2>
+        <h3>Age : {{user.age}}</h3>
+        <h3>Gender : {{user.gender}}</h3>
+        {% for sub in subscriptions%}
+            <h3>{{sub.service}}</h3>
+            <h2>Amount :{{sub.amount}}</h2>
+            <h2>Created date :{{sub.current_date}}</h2>
+        {% endfor%}
+
+    </div>
+    <h2 class="ser"><a href="{% url 'servicelist'%}">Service list</a></h2>
+</body>
+</html>

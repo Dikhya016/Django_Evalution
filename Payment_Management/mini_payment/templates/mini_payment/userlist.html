@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Payment app</title>
+    <style>
+        h1{
+            text-align: center;
+            color: red;
+        }
+        table{
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        th{
+            font-size: 22px;
+            background-color: black;
+            color: white;
+        }
+        td{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>User list 📃</h1>
+    <table border="1">
+        <thead>
+            
+            <tr>
+                <th>Name</th>
+                <th>View Details</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            {% for user in users%}
+            <tr>
+                <td>{{user.name}}</td>
+                <td><a href="./{{user.id}}">viewDetails</a></td>
+            </tr>
+            {%empty%}
+                <h2>Userlist is empty</h2>
+            {%endfor%}
+        </tbody>
+    </table>
+
+    
+</body>
+</html>

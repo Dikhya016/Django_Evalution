@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>service details</title>
+    <style>
+        h1{
+            text-align: center;
+            color: red;
+        }
+        .cont{
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            margin:5% 30%;
+            padding: 2%;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Servise Details</h1>
+    <div class="cont">
+        <h2>Mode of payment :{{service.mode_of_payment}}</h2>
+        <h2>Company :{{service.company}}</h2>
+        <h3>User Name:</h3>
+        {% for sub in subscriptions%}
+            <li>{{sub.user.name}}</li>
+            <h3>Amount: {{sub.amount}}</h3>
+            <h3>Create date: {{sub.current_date}}</h3>
+        {%endfor%}
+
+    </div>
+</body>
+</html>

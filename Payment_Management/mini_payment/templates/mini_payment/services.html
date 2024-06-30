@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <style>
+        h1{
+            text-align: center;
+            color: red;
+        }
+        table{
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        th{
+            font-size: 22px;
+            background-color: black;
+            color: white;
+        }
+        td{
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Service List</h1>
+    
+    <table border="1">
+        <thead>
+            
+            <tr>
+                <th>Type</th>
+                <th>View Details</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            {% for sv in services%}
+            <tr>
+                <td>{{sv.typee}}</td>
+                <td><a href="./{{sv.typee}}">viewDetails</a></td>
+            </tr>
+            {%empty%}
+            <h2>service list is empty</h2>
+            {%endfor%}
+        </tbody>
+    </table>
+    
+      
+</body>
+</html>
